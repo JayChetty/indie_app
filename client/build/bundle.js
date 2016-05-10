@@ -20165,6 +20165,8 @@
 	});
 	exports.Main = undefined;
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -20177,15 +20179,20 @@
 	  displayName: "Main",
 	
 	  render: function render() {
-	    return _react2.default.createElement(
-	      "div",
-	      null,
-	      _react2.default.createElement(
-	        "h1",
-	        null,
-	        " Hello "
-	      )
-	    );
+	    return _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
+	      containerElement: _react2.default.createElement("div", _extends({}, this.props, {
+	        style: {
+	          height: "100px",
+	          widht: "100px"
+	        }
+	      })),
+	      googleMapElement: _react2.default.createElement(_reactGoogleMaps.GoogleMap, {
+	        ref: function ref(map) {
+	          return console.log(map);
+	        },
+	        defaultZoom: 3,
+	        defaultCenter: { lat: -25.363882, lng: 131.044922 } })
+	    });
 	  }
 	});
 	
