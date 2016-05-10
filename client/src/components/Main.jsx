@@ -1,4 +1,5 @@
-var React = require('react');
+import React from "react";
+import { GoogleMap, Marker, SearchBox } from "react-google-maps";
 
 var Main = React.createClass({
   render: function(){
@@ -10,4 +11,4 @@ var Main = React.createClass({
   }
 });
 
-module.exports = Main;
+export { Main }
